@@ -95,7 +95,7 @@ public class GUI extends JFrame implements ActionListener{
         double err = 0;
         if(e.getSource()==bcount){
             double p, l, t; double x; String hk, hl, hlP, hv;
-            double l1 = 0, k = 0, v = 0, lP = 0;
+//            double l1 = 0, k = 0, v = 0, lP = 0;
             
             try{
                 p = Double.parseDouble(fpanjang.getText());
