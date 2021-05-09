@@ -110,10 +110,10 @@ public class GUI extends JFrame implements ActionListener{
             hl = String.valueOf(l1);
             fluasP.setText(hl);
             
-            hlP = String.valueOf(v);
+            hlP = String.valueOf(lP);
             fluasPer.setText(hlP);
             
-            hv = String.valueOf(lP);
+            hv = String.valueOf(v);
             fvolumeB.setText(hv);
             
             } catch(NumberFormatException error){
