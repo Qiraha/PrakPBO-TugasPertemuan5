@@ -10,6 +10,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.InputMismatchException;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
+import tugaspertemuan5.bidang.PersegiPanjang;
+import tugaspertemuan5.ruang.Balok;
 
 /**
  *
@@ -52,27 +54,27 @@ public class GUI extends JFrame implements ActionListener{
         setSize(350,200);
 
         setLayout(new GridLayout(10,2));
-        c = getContentPane();
-        c.add(lpanjang);
-        c.add(fpanjang);
-        c.add(llebar);
-        c.add(flebar);
-        c.add(ltinggi);
-        c.add(ftinggi);
-        c.add(lempt3);
-        c.add(lempt2);
-        c.add(lhasil);
-        c.add(lempt);
-        c.add(lluasP);
-        c.add(fluasP);
-        c.add(lkelilingP);
-        c.add(fkelilingP);
-        c.add(lvolumeB);
-        c.add(fvolumeB);
-        c.add(lluasPer);
-        c.add(fluasPer);
-        c.add(bcount);
-        c.add(breset);
+        
+        add(lpanjang);
+        add(fpanjang);
+        add(llebar);
+        add(flebar);
+        add(ltinggi);
+        add(ftinggi);
+        add(lempt3);
+        add(lempt2);
+        add(lhasil);
+        add(lempt);
+        add(lluasP);
+        add(fluasP);
+        add(lkelilingP);
+        add(fkelilingP);
+        add(lvolumeB);
+        add(fvolumeB);
+        add(lluasPer);
+        add(fluasPer);
+        add(bcount);
+        add(breset);
         
         
         
@@ -99,21 +101,25 @@ public class GUI extends JFrame implements ActionListener{
                 p = Double.parseDouble(fpanjang.getText());
                 l = Double.parseDouble(flebar.getText());
                 t = Double.parseDouble(ftinggi.getText());
-                l1 = p*l;
-            k = 2*(p+l);
-            v = p*l*t;
-            lP = 2*(p*l + p*t + l*t);          
-            
-            hk = String.valueOf(k);
+                
+              PersegiPanjang persegi = new PersegiPanjang(p,l);
+              Balok balok = new Balok(p,l,t);
+              
+//            l1 = p*l;
+//            k = 2*(p+l);
+//            v = p*l*t;
+//            lP = 2*(p*l + p*t + l*t);          
+//            
+            hk = String.valueOf(persegi.keliling());
             fkelilingP.setText(hk);
             
-            hl = String.valueOf(l1);
+            hl = String.valueOf(persegi.luas());
             fluasP.setText(hl);
             
-            hlP = String.valueOf(lP);
+            hlP = String.valueOf(balok.luasPermukaan());
             fluasPer.setText(hlP);
             
-            hv = String.valueOf(v);
+            hv = String.valueOf(balok.volume());
             fvolumeB.setText(hv);
             
             } catch(NumberFormatException error){
@@ -135,14 +141,14 @@ public class GUI extends JFrame implements ActionListener{
         }
         
         if(e.getSource()==breset){
-            String x = "";
-            fpanjang.setText(x);
-            flebar.setText(x);
-            ftinggi.setText(x);
-            fkelilingP.setText(x);
-            fluasP.setText(x);
-            fluasPer.setText(x);
-            fvolumeB.setText(x);
+            
+            fpanjang.setText(null);
+            flebar.setText(null);
+            ftinggi.setText(null);
+            fkelilingP.setText(null);
+            fluasP.setText(null);
+            fluasPer.setText(null);
+            fvolumeB.setText(null);
         }
     }
     
