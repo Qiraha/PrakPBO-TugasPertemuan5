@@ -104,10 +104,10 @@ public class GUI extends JFrame implements ActionListener{
             v = p*l*t;
             lP = 2*(p*l + p*t + l*t);          
             
-            hk = String.valueOf(l1);
+            hk = String.valueOf(k);
             fkelilingP.setText(hk);
             
-            hl = String.valueOf(k);
+            hl = String.valueOf(l1);
             fluasP.setText(hl);
             
             hlP = String.valueOf(v);
